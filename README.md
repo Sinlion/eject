@@ -1,13 +1,13 @@
 # EJECT弹出层按钮插件（jQuery）
 
 ## **概述**
----
+
 > 造个轮子，实现网页内弹出带按钮的遮罩层。
 >  
 > **Chrome 应用/扩展** 开发请联系  *s . . s @ v i p. 1 6 3 . c o m*
 
-## 信息
----
+## **信息**
+
 + *扩展*：eject
 + *简介*：弹出层按钮插件
 + *版本*：0.1
@@ -16,7 +16,7 @@
 + *jquery*：1.7+
 
 ## **摘要**
----
+
 ### *类型*
 **`eject对象`**  通过插件创建的弹出层对象
 
@@ -36,7 +36,7 @@
 
 **`iniBt`**  配置弹出层的按钮
 
-**`**iniBg`**  配置弹出层的背景
+**`iniBg`**  配置弹出层的背景
 
 **`iniUl`**  配置弹出层的样式
 
@@ -47,10 +47,9 @@
 **`closeBt`**  是否弹出层的显示关闭按钮
 
 ## **类型**
----
 
 ### *eject对象*
-通过`$.eject()`方法创建一个弹出层相关的对象，这是标准的object对象，包含一个属性和多个方法，创建一个弹出层只需调用一次。
+通过`$.eject()`方法创建一个弹出层相关的对象，这是标准的object对象，包含一个属性和多个方法。
 ```
 var eject = $.eject();
 ```
@@ -82,7 +81,6 @@ var eject2 = $.eject("#id");
 *上面代码`#id`元素只能触发`eject2`弹出层*
 
 ## **属性**
----
 
 ### *jq*
 eject对象的jq属性指向页面中弹出层元素，是一个标准的jQuery对象，支持所有jquery方法。
@@ -92,7 +90,6 @@ eject.jq;
 通过jq属性可以实现完全对弹出层文档对象的任意改变，包括附加自定义的样式，更改绑定的事件等等。
 
 ## **方法**
----
 
 ### *domAdd*
 使用`domAdd()`方法添加绑定用来触发弹出层的元素，参数可以为符合jquery选择器的字符串或者字符串数组，调用此方法不会覆盖之前的设定。
@@ -198,8 +195,8 @@ function showFunction(e) {
 ```
 *上面被调用方法如果返回`false`,弹出层不会继续显示*
 
-### *showFn*
-使用`showFn()`方法设置弹出层显示时的回调函数。
+### *closeFn*
+使用`closeFn()`方法设置弹出层关闭时的回调函数。
 ```
 eject.closeFn(closeFunction);
 ```
@@ -212,25 +209,40 @@ function closeFunction(e) {
 ```
 *上面被调用方法如果返回`false`,弹出层不会继续关闭*
 
+### *closeBt*
+使用`closeBt()`方法设置是否显示关闭按钮。
+```
+eject.closeBt(true);
+```
 
+## **其他**
 
+`eject对象`所有方法都会返回其自身，进而支持链式调用。
+```
+$(function () {
+    var eject = $.eject();
+    eject.domAdd(["#id",".class","span"])
+    .iniBt({
+        "按钮一": testFunction1,
+        "按钮二": testFunction2,
+        "按钮三": testFunction3
+    })
+    .iniBg({
+        show: true, 
+        color: "black", 
+        opacity: 0.5, 
+        close: true
+    })
+    .iniUl({
+        postion: "top",
+        height: "30px",
+        scale:1
+    })
+    .showFn(showFunction)
+    .closeFn(closeFunction)
+    .closeBt(true);
+});
+```
 
-
-
-***
-**`showFn`**  绑定展示弹出层时的回调函数
-
-**`closeFn`**  绑定隐藏弹出层时的回调函数
-
-**`closeBt`**  是否弹出层的显示关闭按钮
-
-
-
-
-
-
-
-
-
-
-
+## **许可**
+**GNU General Public License v3.0**
