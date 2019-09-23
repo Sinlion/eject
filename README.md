@@ -126,14 +126,14 @@ eject.domEvent(["click", "contextmenu"]);
 eject.domEvent("click");
 eject.domEvent("contextmenu");
 ```
-*上面代码对于绑定元素只有`contextmenu`方法可以触发`eject2`弹出层*
+*上面代码对于绑定元素只有`contextmenu`方法可以触发`eject`弹出层*
 
 ### *domPrevent*
 使用`domPrevent()`方法阻止某些事件作出系统响应,可同时配置多个事件，此操作会覆盖之前的设置。
 ```
 eject.domPrevent({"contextmenu": false});
 ```
-*上面代码对于右键单击元素触发`eject2`弹出层不显示默认的浏览器菜单*
+*上面代码对于右键单击元素触发`eject`弹出层不显示默认的浏览器菜单*
 
 ### *iniBt*
 使用`iniBt()`方法设置弹出层的按钮，参数为对象，对象内键值为按钮名，属性必须为方法，此操作会覆盖之前的设置。
@@ -169,7 +169,7 @@ eject.iniBg({
 + **close**  *是否点击背景关闭弹出层，默认true*
 
 ### *iniUl*
-使用`iniUl()`方法设置弹出层的按钮列表，参数为对象，对象内键值为按钮名，属性必须为方法，此操作会覆盖之前的设置。
+使用`iniUl()`方法设置弹出层的按钮列表部分样式属性。
 ```
 eject.iniUl({
         postion: "top",
