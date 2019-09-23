@@ -15,36 +15,38 @@
 + *时间*：2019-9-20 14:05:21
 + *jquery*：1.7+
 
+![eject.gif](https://raw.githubusercontent.com/sinsinLion/eject/master/eject.gif)
+
 ## **摘要**
 
 ### *类型*
-**`eject对象`**  通过插件创建的弹出层对象
+**[eject对象](#eject对象)**  通过插件创建的弹出层对象
 
 ### *属性*
-**`jq`**  弹出层的jquery对象
+**[jq](#jq)**  弹出层的jquery对象
 
 ### *方法*
-**`domAdd`**  添加触发弹出层的元素
+**[domAdd](#domAdd)**  添加触发弹出层的元素
 
-**`domRemove`**  移除触发弹出层的元素
+**[domRemove](#domRemove)**  移除触发弹出层的元素
 
-**`domClear`**  移除所有触发弹出层的元素
+**[domClear](#domClear)**  移除所有触发弹出层的元素
 
-**`domEvent`**  触发弹出层的元素事件
+**[domEvent](#domEvent)**  触发弹出层的元素事件
 
-**`domPrevent`**  触发弹出层时阻止默认响应
+**[domPrevent](#domPrevent)**  触发弹出层时阻止默认响应
 
-**`iniBt`**  配置弹出层的按钮
+**[iniBt](#iniBt)**  配置弹出层的按钮
 
-**`iniBg`**  配置弹出层的背景
+**[iniBg](#iniBg)**  配置弹出层的背景
 
-**`iniUl`**  配置弹出层的样式
+**[iniUl](#iniUl)**  配置弹出层的样式
 
-**`showFn`**  绑定展示弹出层时的回调函数
+**[showFn](#showFn)**  绑定展示弹出层时的回调函数
 
-**`closeFn`**  绑定隐藏弹出层时的回调函数
+**[closeFn](#closeFn)**  绑定隐藏弹出层时的回调函数
 
-**`closeBt`**  是否弹出层的显示关闭按钮
+**[closeBt](#closeBt)**  是否弹出层的显示关闭按钮
 
 ## **类型**
 
@@ -217,7 +219,7 @@ eject.closeBt(true);
 
 ## **其他**
 
-`eject对象`所有方法都会返回其自身，进而支持链式调用。
+`eject对象`所有方法都会返回其自身，支持链式调用。
 ```
 $(function () {
     var eject = $.eject();
@@ -245,4 +247,4 @@ $(function () {
 ```
 
 ## **许可**
-**GNU General Public License v3.0**
+**[GNU General Public License v3.0](https://github.com/sinsinLion/eject/blob/master/LICENSE)**
